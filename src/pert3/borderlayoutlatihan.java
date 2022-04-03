@@ -1,11 +1,17 @@
 package pert3;
 
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 
+	//import semua class yang ada di java.awt
+//import java.awt.*;
+
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.border.EmptyBorder;
 
 public class borderlayoutlatihan extends JPanel {
@@ -54,7 +60,23 @@ public class borderlayoutlatihan extends JPanel {
 		south = new JButton("South");
 		east = new JButton("East");
 		west = new JButton("West");
-		center = new JButton("Center");
+		
+		JPanel radiobut = new JPanel();
+		
+		JRadioButton male, female;
+		male = new JRadioButton("Male");
+		male.setBackground(Color.gray);
+		male.setPreferredSize(new Dimension(150,30));
+		female = new JRadioButton("Female");
+		female.setPreferredSize(new Dimension(150,30));
+		male.setSelected(true);
+		
+		ButtonGroup bg = new ButtonGroup();
+		bg.add(male);
+		bg.add(female);
+		
+		radiobut.add(male);
+		radiobut.add(female);
 		
 		North = new JButton("North");
 		South = new JButton("South");
@@ -66,7 +88,7 @@ public class borderlayoutlatihan extends JPanel {
 		panelCenter.add(North, BorderLayout.NORTH);
 		panelCenter.add(South, BorderLayout.SOUTH);
 		panelCenter.add(West, BorderLayout.WEST);
-		panelCenter.add(Center, BorderLayout.CENTER);
+		panelCenter.add(radiobut, BorderLayout.CENTER);
 		panelCenter.add(East, BorderLayout.EAST);
 	}
 
